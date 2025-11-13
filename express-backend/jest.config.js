@@ -1,4 +1,5 @@
-npmodule.exports = {
+
+module.exports = {
   clearMocks: true,
 
   testEnvironment: 'node',
