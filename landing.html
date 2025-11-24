@@ -1,0 +1,163 @@
+<!-- ...existing code... -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Clone - Sobre o Projeto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3920a9',
+                        secondary: '#439aff',
+                        'chakra-blue': '#0061cc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-jira-gradient {
+            background: linear-gradient(to right, #0b0f24, #24124d);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <nav class="bg-gray-900/95 shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-brands fa-jira text-3xl text-primary"></i>
+                    <span class="font-bold text-2xl text-gray-100 tracking-tight">Jira Clone</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#sobre" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Sobre</a>
+                        <a href="#features" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Funcionalidades</a>
+                        <a href="#tech" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Tecnologias</a>
+                        <a href="https://github.com/joaocarbonera/a3_jira" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-jira-gradient pt-32 pb-20 lg:pt-48 lg:pb-32 text-white clip-path-slant">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl mb-6">
+                    Gerenciamento Ágil de Projetos
+                </h1>
+                <p class="mt-4 text-lg text-gray-300 max-w-lg mx-auto md:mx-0 mb-8">
+                    Uma réplica funcional do Jira projetada para o planejamento e rastreamento de desenvolvimento de software. Simples, rápido e eficiente.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#sobre" class="border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-primary transition">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="rounded-lg shadow-2xl overflow-hidden border-4 border-gray-800/20 rotate-2 hover:rotate-0 transition duration-500 bg-gray-800">
+                    <img src="jira-hq.gif" alt="Jira Clone Dashboard" class="object-cover w-full h-auto brightness-90">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-100 sm:text-4xl mb-4">
+                Sobre o Projeto
+            </h2>
+            <p class="mt-4 max-w-2xl text-lg text-gray-300 mx-auto">
+                Este projeto é uma aplicação Fullstack desenvolvida com o objetivo de replicar as principais funcionalidades do Jira Software. Ele permite criar projetos, gerenciar tarefas em um quadro Kanban interativo e colaborar com membros da equipe.
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-secondary font-semibold tracking-wide uppercase">O que você pode fazer</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-100 sm:text-4xl">
+                    Funcionalidades Principais
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-primary">
+                        <i class="fa-solid fa-columns text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-100 mb-2">Kanban Board Interativo</h3>
+                    <p class="text-gray-300">
+                        Visualize seu trabalho com clareza. Arraste e solte (Drag & Drop) tarefas entre colunas para atualizar o status instantaneamente.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 text-green-600">
+                        <i class="fa-solid fa-list-check text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-100 mb-2">Gerenciamento de Issues</h3>
+                    <p class="text-gray-300">
+                        Crie, edite e exclua tarefas. Adicione prioridades, tipos (Bug, Task, Story) e designe membros responsáveis.
+                    </p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-purple-600">
+                        <i class="fa-solid fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-100 mb-2">Colaboração</h3>
+                    <p class="text-gray-300">
+                        Adicione comentários nas tarefas, atribua membros ao projeto e filtre o quadro para ver apenas suas demandas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-center text-gray-100 mb-12">Stack Tecnológica</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fa-brands fa-react text-5xl text-blue-300 mb-4"></i>
+                    <span class="font-semibold text-gray-100">React + Vite</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-brands fa-node text-5xl text-green-400 mb-4"></i>
+                    <span class="font-semibold text-gray-100">Node.js + Express</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-database text-5xl text-gray-300 mb-4"></i>
+                    <span class="font-semibold text-gray-100">Prisma ORM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">&copy; 2025 Jira Clone Project.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://github.com/JoaoCarbonera/A3_Jira/tree/main" class="hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+<!-- ...existing code... -->
