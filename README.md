@@ -126,6 +126,11 @@ Estratégia de Testes
 
 https://drive.google.com/file/d/1ZYyQHsopfvxLgCmzA_vlwfDGV_1XG5tD/view?usp=drive_link
 
+Testes Unitários na Branch de testes.
+
+Link Repositório de Testes End 2 End: 
+https://github.com/arthurw26/Automacao-jira/tree/main
+
 Casos de Teste:
 * CT-01: Registrar novo usuário com sucesso.
 * CT-02: Retornar 409 se e-mail já existir.
