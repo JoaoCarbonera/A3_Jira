@@ -2,6 +2,9 @@
 
 Um aplicativo web de gerenciamento de projetos e tarefas, baseado na metodologia Kanban, focado em performance e qualidade de código.
 
+
+<img width="1920" height="1080" alt="demonstracao_site" src="jira-hq.gif" />
+
 ## 👥 Integrantes do Grupo
 
 *   **Arthur Wiatrowski** 
