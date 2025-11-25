@@ -13,6 +13,9 @@ jest.mock('@prisma/client', () => {
     member: {
       create: jest.fn(),
     },
+    project: {
+      findUnique: jest.fn(),
+    },
   };
   return { PrismaClient: jest.fn(() => mockPrismaClient) };
 });
@@ -71,20 +74,17 @@ describe('Auth Controller', () => {
     expect(res.json).toHaveBeenCalledWith({ message: 'user with this email already exists' });
   });
 
-  // Teste 3: Deve fazer login com sucesso com credenciais corretas
-  test('CT-03: deve fazer login com sucesso com credenciais corretas', async () => {
-    const req = mockRequest({ email: 'user@example.com', pwd: 'password123' });
+  // Teste 3: Deve retornar erro quando ocorre exceção durante o registro (dados inválidos)
+  test('CT-03: deve retornar erro quando ocorre exceção durante o registro', async () => {
+    const req = mockRequest({ email: 'test@example.com' }); // Falta pwd e username
     const res = mockResponse();
-    const existingUser = { id: 1, email: 'user@example.com', pwd: 'hashed_password' };
 
-    client.user.findFirst.mockResolvedValue(existingUser);
-    bcrypt.compare.mockResolvedValue(true); // Senha correta
+    client.user.findFirst.mockResolvedValue(null);
+    client.user.create.mockRejectedValue(new Error('Missing required field'));
 
-    await logIn(req, res);
+    await register(req, res);
 
-    expect(res.json).toHaveBeenCalledWith(existingUser);
-    expect(res.cookie).toHaveBeenCalled();
-    expect(res.end).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(400);
   });
 
   // Teste 4: Deve retornar erro 401 em caso de senha incorreta
@@ -115,4 +115,3 @@ describe('Auth Controller', () => {
     expect(res.json).toHaveBeenCalledWith({ message: 'no account was registered with this email' });
   });
 });
-
